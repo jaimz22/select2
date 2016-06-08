@@ -365,15 +365,16 @@ define([
       maximumSelectionLength: 0,
       minimumResultsForSearch: 0,
       selectOnClose: false,
+      textProperty:'text',
       sorter: function (data) {
         return data;
       },
       templateResult: function (result) {
-        return result.text;
-      },
+        return result[this.defaults.textProperty];
+      }.bind(this),
       templateSelection: function (selection) {
-        return selection.text;
-      },
+        return selection[this.defaults.textProperty];
+      }.bind(this),
       theme: 'default',
       width: 'resolve'
     };
