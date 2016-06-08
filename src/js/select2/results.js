@@ -508,7 +508,7 @@ define([
     var template = this.options.get('templateResult');
     var escapeMarkup = this.options.get('escapeMarkup');
 
-    var content = template(result, container);
+    var content = template.call(this, result, container);
 
     if (content == null) {
       container.style.display = 'none';
